@@ -2,6 +2,7 @@
  * 사용자 정의 타입가드
  */
 
+import { profile } from "console";
 import { Interface } from "readline";
 
 type Dog = {
@@ -144,3 +145,47 @@ const NumberMap2: Map2<number> = {
  * -> 유저 관리 프로그램
  * -> 유저 구분 : 학생 유저 / 개발자 유저
  */
+
+interface Student {
+  type: "student";
+  school: string;
+}
+
+interface Developer {
+  type: "developer";
+  skill: string;
+}
+
+interface User<T> {
+  name: string;
+  profile: T;
+}
+
+function gotoScholl(user: User<Student>) {
+  const school = user.profile.school;
+  console.log(school + "등교");
+}
+
+function works(user: User<Developer>) {
+  const skill = user.profile.skill;
+  console.log(skill + "로 개발");
+}
+
+const user1: User<Developer> = {
+  name: "최해초",
+  profile: {
+    skill: "TypeScript",
+    type: "developer",
+  },
+};
+
+const user2: User<Student> = {
+  name: "이정환",
+  profile: {
+    school: "GKK 학교",
+    type: "student",
+  },
+};
+
+console.log(works(user1));
+console.log(gotoScholl(user2));
