@@ -53,3 +53,17 @@ funcB(...arr); // 1 [2,3]
 for (let item of arr) {
   console.log(item);
 }
+
+// object의 key들을 배열로 반환
+let keys = Object.keys(person);
+
+for (let key of keys) {
+  console.log(key);
+}
+
+// object의 value들을 배열로 반환
+let values = Object.values(person);
+
+for (let value of values) {
+  console.log(value);
+}
