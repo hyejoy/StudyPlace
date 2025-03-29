@@ -68,3 +68,42 @@ async function waitPlease() {
 }
 
 waitPlease();
+
+/**
+ * 자바스크립트 클래스
+ */
+
+class Student {
+  // 필드
+  name;
+  age;
+  grade;
+
+  //생성자
+  constructor(name, age, grade) {
+    this.name = name;
+    this.age = age;
+    this.grade = grade;
+  }
+
+  // 메서드
+  study() {
+    console.log(`${name}은 학교에서 공부중!`);
+  }
+}
+
+let sutdentA = new Student("김아무개", 16, "A");
+
+// 클래스는 확장 가능
+class Developer extends Student {
+  favoriteSkill;
+
+  constructor(name, age, grade, favoriteSkill) {
+    super(name, age, grade);
+    this.favoriteSkill = favoriteSkill;
+  }
+
+  study() {
+    console.log("오버라이딩~");
+  }
+}
