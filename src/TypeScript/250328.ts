@@ -95,6 +95,15 @@ function map<T>(arr: T[], callback: (value: T) => T) {
 map(arr, (value) => value * 2);
 map(["iam", "person"], (value) => value.toUpperCase());
 
+function foreEach<T>(arr: T[], callback: (value: T) => void) {
+  for (let i = 0; i < arr.length; i++) {
+    callback(arr[i]);
+  }
+}
+
+foreEach(arr, (value) => value * 5);
+
+/**제네릭 인터페이스 */
 interface Keypare<K, V> {
   key: K;
   value: V;
