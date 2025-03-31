@@ -12,14 +12,14 @@ function falsy() {
   return undefined;
 }
 
-let a = falsy() && truty();
-console.log("a : ", a);
+let a = falsy() && truty(); // false 함수만 실행
+console.log("a : ", a); // undefined
 
-let b = truty() && falsy();
-console.log("b :  ", b);
+let b = truty() && falsy(); // 둘다실행
+console.log("b :  ", b); // undefined
 
-let c = falsy() || truty();
-console.log("c :  ", c);
+let c = falsy() || truty(); // 둘다실행
+console.log("c :  ", c); // 123
 
 let person = {
   name: "이정환",
