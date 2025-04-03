@@ -1,5 +1,3 @@
-import { StdioNull } from "child_process";
-
 class Student {
   // 필드
   name: string;
